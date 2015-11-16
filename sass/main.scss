@@ -10,7 +10,6 @@
 // Body
 html, body {
 	width: 100%;
-
 	-moz-osx-font-smoothing: grayscale;
 	 -webkit-font-smoothing: antialiased;
 			-moz-font-smoothing: antialiased;
@@ -20,9 +19,7 @@ html, body {
 
 body {
 	color: #000;
-	background: #888888;
-	font-size: 12px;
-	@include fontReg();
+	font-family: sans-serif;
 }
 
 // Common

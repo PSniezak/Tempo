@@ -1,8 +1,8 @@
 # Numéro d'équipe
-20
+17
 
 # Nom du projet
-Tempo
+Starter H3
 
 # Equipe
 - xxxx
@@ -12,6 +12,7 @@ Tempo
 - xxxx
 
 # Description
-Bonchour
+xxxx
 
 # Instructions
+(sudo) npm install

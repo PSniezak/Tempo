@@ -53,6 +53,17 @@ Router.prototype.createRoutes = function() {
 
 	});
 
+	// Genre
+	crossroads.addRoute( '/genre' , function(){
+
+		self._onNavigate.dispatch({
+			view: 'genre'
+		});
+
+		console.log( '## Navigate genre experience' );
+
+	});
+
 	// Experience
 	crossroads.addRoute( '/experience' , function(){
 

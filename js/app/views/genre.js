@@ -1,18 +1,18 @@
-var Experience = function(){
+var Genre = function(){
 
-	this.id = 'experience';
+	this.id = 'genre';
 
 	View.apply(this, arguments);
 
 	this.images = {
-		'experience-background': 'img/home-bg.jpg'
+		'genre-background': 'img/home-bg.jpg'
 	};
 
 };
 
-Experience.prototype = Object.create(View.prototype);
+Genre.prototype = Object.create(View.prototype);
 
-Experience.prototype.animateIn = function() {
+Genre.prototype.animateIn = function() {
 	
 	View.prototype.animateIn.call(this);
 
@@ -26,7 +26,7 @@ Experience.prototype.animateIn = function() {
 
 };
 
-Experience.prototype.animateOut = function() {
+Genre.prototype.animateOut = function() {
 	
 	View.prototype.animateOut.call(this);
 
