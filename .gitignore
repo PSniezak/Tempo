@@ -1,4 +1,6 @@
-.htaccess
 node_modules/
 .DS_Store
-js/dist/*
+/node_modules/
+/build
+/js/dist
+/stylesheets
