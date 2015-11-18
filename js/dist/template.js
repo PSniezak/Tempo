@@ -6,7 +6,7 @@ this["templates"]["genre"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1
     return "<section id=\"genre\">\n\n	<h2>Genre</h2>\n\n  <br/>\n  <em>Ici se trouve l'écran de selection des différents styles musicaux.</em>\n  <br/>\n	<a href=\"/experience\">Aller sur l'experience</a>\n  <br/>\n	<a href=\"/\">Revenir sur la home</a>\n\n</section>";
 },"useData":true});
 this["templates"]["home"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<section id=\"home\">\n\n	<h2>La Home</h2>\n	<br />\n	<a href=\"/genre\">Aller vers les genres</a>\n</section>";
+    return "<section id=\"home\">\n\n	<div>\n      <img src=\"../img/TEMPOLOGO.gif\" alt=\"Logo tempo création musique\">\n      <p class=\"titleHeadline\">Entraînez-vous à développer une ambiance musicale.</p>\n      <a class=\"button\" href=\"/genre\">Start</a>\n	</div>\n	\n</section>";
 },"useData":true});
 this["templates"]["loader"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     return "<section id=\"loader\">\n  <span>Chargement, lol.</span>\n</section>";

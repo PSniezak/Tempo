@@ -237,7 +237,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -390,3 +391,37 @@ html, body, #main {
 body {
   color: #343434;
   font-family: sans-serif; }
+
+#home {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center; }
+  #home > div {
+    margin: 0 auto;
+    text-align: center; }
+  #home img {
+    margin: 0 auto;
+    padding: 0 200px 18px;
+    border-bottom: 2px solid #858585;
+    display: block; }
+  #home .titleHeadline {
+    text-align: center;
+    font-family: 'Brandon Grotesque Light';
+    margin: 15px 0 60px 0;
+    font-size: 28px; }
+  #home .button {
+    font-family: 'Brandon Grotesque Light';
+    font-size: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #b8b8b8;
+    padding: 5px 60px 2px;
+    border: 1px solid #e3e2e2;
+    transition: color ease-in-out 0.5s, border-color ease-in-out 0.5s; }
+  #home .button:hover, #home .button:active {
+    border-color: black;
+    color: black; }

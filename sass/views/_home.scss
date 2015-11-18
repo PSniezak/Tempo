@@ -1,2 +1,46 @@
 #home{
+   
+   -webkit-display: flex;
+   -moz-display: flex;
+   -ms-display: flex;
+   -o-display: flex;
+   display: flex;
+   -ms-align-items: center;
+   align-items: center;
+   
+   >div {
+      margin: 0 auto;
+      text-align: center;
+   }
+   
+   img {
+      margin: 0 auto;
+      padding: 0 200px 18px;
+      border-bottom: 2px solid #858585;
+      display : block;
+   }
+   
+   .titleHeadline {
+      text-align: center;
+      font-family: 'Brandon Grotesque Light';
+      margin: 15px 0 60px 0;
+      font-size: 28px;
+   }
+   
+   .button {
+      font-family: 'Brandon Grotesque Light';
+      font-size: 25px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #b8b8b8;
+      padding: 5px 60px 2px;
+      border: 1px solid #e3e2e2;
+      transition: color ease-in-out 0.5s, border-color ease-in-out 0.5s;
+   }
+   
+   .button:hover, .button:active {
+      border-color: black;
+      color: black;
+   }
+   
 }
