@@ -20,7 +20,7 @@ Home.prototype.animateIn = function() {
 
 	if ( !this.loaded ) return;
 
-	this.domElem.fadeIn(function(){
+	this.domElem.fadeIn(250, function(){
 		self.onAnimateIn();
 	});
 
@@ -32,7 +32,7 @@ Home.prototype.animateOut = function() {
 
 	var self = this;
 
-	this.domElem.fadeOut(function(){
+	this.domElem.fadeOut(250, function(){
 		self.onAnimateOut();
 	});
 
