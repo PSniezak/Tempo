@@ -364,17 +364,29 @@ th {
   font-style: normal;
   font-weight: 200; }
 
+#main {
+  background: #F5F5F5;
+  position: relative; }
+
+#main > section {
+  background: #FFF;
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  left: 50px;
+  right: 50px;
+  padding: 20px; }
+
 html, body {
-  width: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   font-smoothing: antialiased; }
 
-body {
-  color: #000;
-  font-family: sans-serif; }
+html, body, #main {
+  height: 100%; }
 
-#loader {
-  padding: 40px; }
+body {
+  color: #343434;
+  font-family: sans-serif; }
