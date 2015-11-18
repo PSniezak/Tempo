@@ -848,11 +848,20 @@ Home.prototype.animateIn = function() {
 
 	if ( !this.loaded ) return;
 
-	this.domElem.fadeIn(250, function(){
+	this.domElem.fadeIn(500, function(){
+      
 		self.onAnimateIn();
+      
 	});
+   
+   // Animation Home
+   $( "#home img" ).delay(500).animate({ opacity: 1 }, 800, function() {
+      $( ".home__headline").animate({ opacity: 1 }, 500, function(){
+         $('.home__button').animate({ opacity: 1 }), 300});
+   });
 
 };
+
 
 Home.prototype.animateOut = function() {
 	
@@ -860,7 +869,7 @@ Home.prototype.animateOut = function() {
 
 	var self = this;
 
-	this.domElem.fadeOut(250, function(){
+	this.domElem.fadeOut(500, function(){
 		self.onAnimateOut();
 	});
 
