@@ -1,0 +1,16 @@
+html, body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+html, body, #main {
+  height: 100%;
+}
+
+body {
+  color: $black;
+  font-family: sans-serif;
+}

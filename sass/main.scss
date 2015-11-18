@@ -4,30 +4,18 @@
 // Reset
 @import "reset";
 
+// Config
+@import 'config';
+
 // Fonts
 @import "fonts";
-
-// Body
-html, body {
-	width: 100%;
-	-moz-osx-font-smoothing: grayscale;
-	 -webkit-font-smoothing: antialiased;
-			-moz-font-smoothing: antialiased;
-			 -ms-font-smoothing: antialiased;
-					 font-smoothing: antialiased;
-}
-
-body {
-	color: #000;
-	font-family: sans-serif;
-}
 
 // Common
 @import "common/components";
 
 @import "common/loader";
-@import "common/header";
-@import "common/footer";
+@import 'common/layout';
+@import 'common/misc';
 
 // Views
 @import "views/home";
