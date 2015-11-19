@@ -23,23 +23,33 @@ Experience.prototype.animateIn = function() {
 	this.domElem.fadeIn(250, function(){
 		self.onAnimateIn();
 	});
-    
 
-        
+
+    //Drag and drop
+    
     //see http://www.greensock.com/draggable/ for more details.
 
 var droppables = $(".element");
 var dropArea = $(".exp");
+var dropSecond = $(".sample");
+var droppablesDropped = $('.dropped');
 
 //the overlapThreshold can be a percentage ("50%", for example, would only trigger when 50% or more of the surface area of either element overlaps) or a number of pixels (20 would only trigger when 20 pixels or more overlap), or 0 will trigger when any part of the two elements overlap.
 var overlapThreshold = "99%";
-
-Draggable.create(droppables, {
+var posX, posY;
+//zone de drag and drop principale = des samples vers l'expérience
+    
+var mainDrag = Draggable.create(droppables, {
   bounds: window,
   //record the starting position on press
   onPress: function() {
     this.startX = this.x;
     this.startY = this.y;
+      if ($(this.target).hasClass('dropped')){
+          this.startX = posX;
+          this.startY = posY;
+          $(this.target).addClass('highlight');
+      }
   },
   onDrag: function(e) {
     if (this.hitTest(dropArea, overlapThreshold)) {
@@ -49,21 +59,26 @@ Draggable.create(droppables, {
     }
   },
 onDragEnd: function(e) {
-  //instead of doing hitTest again, just see if it has the highligh class.
+  //instead of doing hitTest again, just see if it has the highligh class. Si au moment de le poser il avait la classe .highlight => c'est qu'il est dans la zone de drop
   if (!$(this.target).hasClass("highlight")) {
+          if($(this.target).hasClass('dropped')){
+              $(this.target).removeClass('dropped');
+          }
     //if there isn't a highlight, send it back to starting position
     TweenLite.to(this.target, 0.2, {
       x: this.startX,
       y: this.startY
     })
+  } else {
+        posX = this.startX;
+        posY = this.startY;
+        $(this.target).removeClass("highlight");
+        $(this.target).addClass('dropped');
   }
-
 }
 });
-    
-    
-};
 
+}; //end animateIn
 Experience.prototype.animateOut = function() {
 	
 	View.prototype.animateOut.call(this);
