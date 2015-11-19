@@ -773,22 +773,9 @@ Experience.prototype.animateIn = function() {
 	this.domElem.fadeIn(250, function(){
 		self.onAnimateIn();
 	});
+    
 
-};
-
-Experience.prototype.animateOut = function() {
-	
-	View.prototype.animateOut.call(this);
-
-	var self = this;
-
-	this.domElem.fadeOut(250, function(){
-		self.onAnimateOut();
-	});
-
-};
-
-var testdrag = function(){
+        
     //see http://www.greensock.com/draggable/ for more details.
 
 var droppables = $(".element");
@@ -806,7 +793,6 @@ Draggable.create(droppables, {
   },
   onDrag: function(e) {
     if (this.hitTest(dropArea, overlapThreshold)) {
-        console.log('it works!');
       $(this.target).addClass("highlight");
     } else {
       $(this.target).removeClass("highlight");
@@ -824,7 +810,23 @@ onDragEnd: function(e) {
 
 }
 });
-}
+    
+    
+};
+
+Experience.prototype.animateOut = function() {
+	
+	View.prototype.animateOut.call(this);
+
+	var self = this;
+
+	this.domElem.fadeOut(250, function(){
+		self.onAnimateOut();
+	});
+
+};
+
+
 var Genre = function(){
 
 	this.id = 'genre';

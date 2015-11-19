@@ -492,6 +492,7 @@ body {
   margin-top: 10px; }
 
 #experience .highlight {
+<<<<<<< HEAD
   border: 4px solid yellow; }
 
 #main #genre {
@@ -519,3 +520,8 @@ body {
       text-decoration: none;
       text-transform: uppercase;
       margin: 0 auto; }
+=======
+  border: 4px solid yellow;
+  height: 4em;
+  width: 4em; }
+>>>>>>> origin/master
