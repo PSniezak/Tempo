@@ -1,0 +1,42 @@
+#main #genre {
+   
+   background-color: #fff;
+   top: 15px;
+   text-align: center;
+   
+   .genre__container {
+   
+      .categories {  
+         background-color: $grey;
+         width: 49%;
+         float:left;
+         margin:1% 0;
+      }
+      
+      .categories:nth-child(odd){
+         float:right;
+      }
+      
+      .categories:nth-child(even){
+         float:left;
+      }
+      
+      .categories h2 {
+         
+         padding: 100px 0;
+         
+         a{
+            font-family: 'Brandon Grotesque Light';
+            font-size: 25px;
+            color: $black;
+            text-decoration: none;
+            text-transform: uppercase;
+         }
+      }
+      
+      
+      
+   }
+   
+   
+}

@@ -369,7 +369,7 @@ th {
   background: #FFF;
   position: relative; }
 
-#main > section {
+#main section {
   background: #F5F5F5;
   position: absolute;
   top: 50px;
@@ -493,3 +493,25 @@ body {
 
 #experience .highlight {
   border: 4px solid yellow; }
+
+#main #genre {
+  background-color: #fff;
+  top: 15px;
+  text-align: center; }
+  #main #genre .genre__container .categories {
+    background-color: #F5F5F5;
+    width: 49%;
+    float: left;
+    margin: 1% 0; }
+  #main #genre .genre__container .categories:nth-child(odd) {
+    float: right; }
+  #main #genre .genre__container .categories:nth-child(even) {
+    float: left; }
+  #main #genre .genre__container .categories h2 {
+    padding: 100px 0; }
+    #main #genre .genre__container .categories h2 a {
+      font-family: 'Brandon Grotesque Light';
+      font-size: 25px;
+      color: #343434;
+      text-decoration: none;
+      text-transform: uppercase; }
