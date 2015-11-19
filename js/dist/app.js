@@ -521,6 +521,130 @@ ViewController.prototype.onNavLinkClick = function(e) {
 	}
 
 };
+var Loader = function(xhr, maxConnections){
+
+	this._onComplete = new signals.Signal();
+
+	this.images = {};
+
+	this.isComplete = false;
+
+	this.fileTypes = {
+		IMAGE: createjs.AbstractLoader.IMAGE,
+		VIDEO: createjs.AbstractLoader.VIDEO,
+		SOUND: createjs.AbstractLoader.SOUND,
+		JS: createjs.AbstractLoader.JAVASCRIPT,
+		JSON: createjs.AbstractLoader.JSON		
+	};
+
+	this.useXHR = false;
+	this.maxConnections = 50;
+
+	if ( xhr ) this.useXHR = xhr;
+	if ( maxConnections ) this.maxConnections = maxConnections;
+
+	this.init();
+
+};
+
+Loader.prototype.init = function() {
+
+	if ( !this.queue ){
+
+		this.queue = new createjs.LoadQueue( this.useXHR );
+
+	}
+
+	this.queue.on('complete', $.proxy(this.onQueueComplete, this));
+
+};
+
+Loader.prototype.onQueueComplete = function() {
+	
+	this.isComplete = true;
+
+	this._onComplete.dispatch();
+
+};
+
+Loader.prototype.addImages = function( images ) {
+
+	var self = this;
+
+	$.each( images, function(id, img){
+
+		self.queue.loadFile({
+			id: id,
+			src: img,
+			type: self.fileTypes.IMAGE
+		}, false);
+
+	});
+
+};
+
+Loader.prototype.start = function() {
+	
+	this.queue.load();
+
+};
+
+Loader.prototype.pause = function() {
+	
+	this.queue.setPaused( true );
+
+};
+
+Loader.prototype.resume = function() {
+	
+	this.queue.setPaused( false );
+
+};
+
+Loader.prototype.clearQueue = function() {
+	
+	this.queue.removeAll();
+
+};
+var MainLoader = function(){
+
+	this.id = 'loader';
+
+	View.apply(this, arguments);
+
+	this.images = {
+		'logo': 'img/logo.png'
+	};
+
+};
+
+MainLoader.prototype = Object.create(View.prototype);
+
+MainLoader.prototype.animateIn = function() {
+	
+	View.prototype.animateIn.call(this);
+
+	var self = this;
+
+	if ( !this.loaded ) return;
+
+	this.domElem.fadeIn(function(){
+		self.onAnimateIn();
+	});
+
+};
+
+MainLoader.prototype.animateOut = function() {
+	
+	View.prototype.animateOut.call(this);
+
+	var self = this;
+
+	this.domElem.fadeOut(function(){
+		self.onAnimateOut();
+	});
+
+};
 var Router = function(){
 
 	// Create navigate event
@@ -801,130 +925,6 @@ Home.prototype.animateOut = function() {
 	var self = this;
 
 	this.domElem.fadeOut(500, function(){
-		self.onAnimateOut();
-	});
-
-};
-var Loader = function(xhr, maxConnections){
-
-	this._onComplete = new signals.Signal();
-
-	this.images = {};
-
-	this.isComplete = false;
-
-	this.fileTypes = {
-		IMAGE: createjs.AbstractLoader.IMAGE,
-		VIDEO: createjs.AbstractLoader.VIDEO,
-		SOUND: createjs.AbstractLoader.SOUND,
-		JS: createjs.AbstractLoader.JAVASCRIPT,
-		JSON: createjs.AbstractLoader.JSON		
-	};
-
-	this.useXHR = false;
-	this.maxConnections = 50;
-
-	if ( xhr ) this.useXHR = xhr;
-	if ( maxConnections ) this.maxConnections = maxConnections;
-
-	this.init();
-
-};
-
-Loader.prototype.init = function() {
-
-	if ( !this.queue ){
-
-		this.queue = new createjs.LoadQueue( this.useXHR );
-
-	}
-
-	this.queue.on('complete', $.proxy(this.onQueueComplete, this));
-
-};
-
-Loader.prototype.onQueueComplete = function() {
-	
-	this.isComplete = true;
-
-	this._onComplete.dispatch();
-
-};
-
-Loader.prototype.addImages = function( images ) {
-
-	var self = this;
-
-	$.each( images, function(id, img){
-
-		self.queue.loadFile({
-			id: id,
-			src: img,
-			type: self.fileTypes.IMAGE
-		}, false);
-
-	});
-
-};
-
-Loader.prototype.start = function() {
-	
-	this.queue.load();
-
-};
-
-Loader.prototype.pause = function() {
-	
-	this.queue.setPaused( true );
-
-};
-
-Loader.prototype.resume = function() {
-	
-	this.queue.setPaused( false );
-
-};
-
-Loader.prototype.clearQueue = function() {
-	
-	this.queue.removeAll();
-
-};
-var MainLoader = function(){
-
-	this.id = 'loader';
-
-	View.apply(this, arguments);
-
-	this.images = {
-		'logo': 'img/logo.png'
-	};
-
-};
-
-MainLoader.prototype = Object.create(View.prototype);
-
-MainLoader.prototype.animateIn = function() {
-	
-	View.prototype.animateIn.call(this);
-
-	var self = this;
-
-	if ( !this.loaded ) return;
-
-	this.domElem.fadeIn(function(){
-		self.onAnimateIn();
-	});
-
-};
-
-MainLoader.prototype.animateOut = function() {
-	
-	View.prototype.animateOut.call(this);
-
-	var self = this;
-
-	this.domElem.fadeOut(function(){
 		self.onAnimateOut();
 	});
 
