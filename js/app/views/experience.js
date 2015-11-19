@@ -37,3 +37,41 @@ Experience.prototype.animateOut = function() {
 	});
 
 };
+
+var testdrag = function(){
+    //see http://www.greensock.com/draggable/ for more details.
+
+var droppables = $(".element");
+var dropArea = $(".exp");
+
+//the overlapThreshold can be a percentage ("50%", for example, would only trigger when 50% or more of the surface area of either element overlaps) or a number of pixels (20 would only trigger when 20 pixels or more overlap), or 0 will trigger when any part of the two elements overlap.
+var overlapThreshold = "99%";
+
+Draggable.create(droppables, {
+  bounds: window,
+  //record the starting position on press
+  onPress: function() {
+    this.startX = this.x;
+    this.startY = this.y;
+  },
+  onDrag: function(e) {
+    if (this.hitTest(dropArea, overlapThreshold)) {
+        console.log('it works!');
+      $(this.target).addClass("highlight");
+    } else {
+      $(this.target).removeClass("highlight");
+    }
+  },
+onDragEnd: function(e) {
+  //instead of doing hitTest again, just see if it has the highligh class.
+  if (!$(this.target).hasClass("highlight")) {
+    //if there isn't a highlight, send it back to starting position
+    TweenLite.to(this.target, 0.2, {
+      x: this.startX,
+      y: this.startY
+    })
+  }
+
+}
+});
+}
