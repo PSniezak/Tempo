@@ -497,21 +497,25 @@ body {
 #main #genre {
   background-color: #fff;
   top: 15px;
-  text-align: center; }
-  #main #genre .genre__container .categories {
-    background-color: #F5F5F5;
-    width: 49%;
-    float: left;
-    margin: 1% 0; }
-  #main #genre .genre__container .categories:nth-child(odd) {
-    float: right; }
-  #main #genre .genre__container .categories:nth-child(even) {
-    float: left; }
-  #main #genre .genre__container .categories h2 {
-    padding: 100px 0; }
-    #main #genre .genre__container .categories h2 a {
+  text-align: center;
+  height: 78%; }
+  #main #genre .genre__container {
+    height: 100%; }
+    #main #genre .genre__container .categories {
+      background-color: #F5F5F5;
+      width: 49%;
+      height: 49%;
+      margin: 1% 0;
+      display: flex;
+      align-items: center; }
+    #main #genre .genre__container a:nth-child(odd) .categories {
+      float: right; }
+    #main #genre .genre__container a:nth-child(even) .categories {
+      float: left; }
+    #main #genre .genre__container .categories h2 {
       font-family: 'Brandon Grotesque Light';
-      font-size: 25px;
+      font-size: 40px;
       color: #343434;
       text-decoration: none;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      margin: 0 auto; }
