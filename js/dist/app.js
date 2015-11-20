@@ -807,13 +807,23 @@ var mainDrag = Draggable.create(droppables, {
     } else {
       $(this.target).removeClass("highlight");
     }
+    if ($(this.target).hasClass('dropped')){
+       if (!this.hitTest(dropArea, overlapThreshold)) { 
+        $(this.target).removeClass('dropped'); 
+        $(this.target).addClass('deleteSample');
+       }else{
+        $(this.target).removeClass('deleteSample');
+       }
+    }
   },
 onDragEnd: function(e) {
   //instead of doing hitTest again, just see if it has the highligh class. Si au moment de le poser il avait la classe .highlight => c'est qu'il est dans la zone de drop
+    //s'il n'était pas dans la zone alors
   if (!$(this.target).hasClass("highlight")) {
           if($(this.target).hasClass('dropped')){
               $(this.target).removeClass('dropped');
           }
+      $(this.target).removeClass('deleteSample');
     //if there isn't a highlight, send it back to starting position
     TweenLite.to(this.target, 0.2, {
       x: this.startX,
@@ -824,6 +834,7 @@ onDragEnd: function(e) {
         posY = this.startY;
         $(this.target).removeClass("highlight");
         $(this.target).addClass('dropped');
+      $(this.target).removeClass('deleteSample');
   }
 }
 });
