@@ -8,3 +8,6 @@ rev-manifest.json
 js/dist/vendor.js
 build/stylesheets/main.min-7caa367b.css
 build/js/app.min-f0fd9418.js
+stylesheets/main.css
+js/dist/template.js
+js/dist/app.js

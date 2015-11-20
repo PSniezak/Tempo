@@ -21,7 +21,6 @@ var Loader = function(xhr, maxConnections){
 	if ( maxConnections ) this.maxConnections = maxConnections;
 
 	this.init();
-
 };
 
 Loader.prototype.init = function() {

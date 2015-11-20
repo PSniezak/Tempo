@@ -12,6 +12,8 @@ var ViewController = function(){
 	this.currentView = null;
 	this.nextView = null;
 
+	/*return false;*/
+
 	this.init();
 
 };
