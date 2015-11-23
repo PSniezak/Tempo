@@ -52,18 +52,30 @@ var mainDrag = Draggable.create(droppables, {
       }
   },
   onDrag: function(e) {
+      //s'il est dans la zone de drop
     if (this.hitTest(dropArea, overlapThreshold)) {
       $(this.target).addClass("highlight");
     } else {
+        //s'il n'est pas dans la zone de drop
       $(this.target).removeClass("highlight");
     }
+      // s'il a la classe dropped = son en cours sur la timeline ou deleteSample = il est draggé hors de la zone
     if ($(this.target).hasClass('dropped')){
-       if (!this.hitTest(dropArea, overlapThreshold)) { 
-        $(this.target).removeClass('dropped'); 
+       //s'il n'est pas dans la zone de drop
+        if (!this.hitTest(dropArea, overlapThreshold)) {
         $(this.target).addClass('deleteSample');
-       }else{
-        $(this.target).removeClass('deleteSample');
+        $(this.target).removeClass('dropped');
        }
+    }else{
+        if ($(this.target).hasClass('deleteSample')){
+            if (this.hitTest(dropArea, overlapThreshold)){
+                $(this.target).removeClass('deleteSample');
+            }
+        }else{
+            if (!this.hitTest(dropArea, overlapThreshold)){
+                $(this.target).addClass('deleteSample');
+            }
+        }
     }
   },
 onDragEnd: function(e) {
