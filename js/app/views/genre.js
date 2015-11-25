@@ -50,7 +50,7 @@ Genre.prototype.animateIn = function() {
 		
 	});
 	
-	$('.genre__canvas').mouseleave(function() {
+	$('.categories').mouseleave(function() {
 		clearInterval(intervDraw);
 	});
 	
