@@ -1,103 +1,108 @@
 #main #experience {
-  background-color: #fff;
-  text-align: center;
-  .sample-content {
-    margin-top: 0.5%;
-    height: 29%;
-    display: flex;
-    justify-content: space-between;
-    .sample {
-      width: 33%;
-      background-color: #f6f6f6;
-      h5 {
-        text-align: center;
-        color: #82daf6;
-        font-size: 1.8em;
-        text-transform: uppercase;
-        margin: 13px 0;
-      }
-      .element-content {
+    background-color: #fff;
+    text-align: center;
+    .sample-content {
+        margin-top: 0.5%;
+        height: 29%;
         display: flex;
-        justify-content: space-around;
-        margin-bottom: 5%;
-        .element {
-          display: flex;
-          border-radius: 50%;
-          background-color: #FFF;
-          height: 5em; width: 5em;
-          justify-content: center;
-          align-items: center;
-          span {
-            font-size: 80%;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 0 10px;
-          }
+        justify-content: space-between;
+        .sample {
+            width: 33%;
+            background-color: #f6f6f6;
+            h5 {
+                text-align: center;
+                color: #82daf6;
+                font-size: 1.8em;
+                text-transform: uppercase;
+                margin: 13px 0;
+            }
+            .element-content {
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 5%;
+                .element {
+                    display: flex;
+                    border-radius: 50%;
+                    background-color: #FFF;
+                    height: 5em;
+                    width: 5em;
+                    justify-content: center;
+                    align-items: center;
+                    transition: background-color 0.5s, color 0.5s;
+                    span {
+                        font-size: 80%;
+                        text-align: center;
+                        text-transform: uppercase;
+                        padding: 0 10px;
+                    }
+                }
+                .highlight {
+                    background-color: #6d6d6d;
+                    color: #fff;
+                }
+                .deleteSample::before,
+                .deleteSample::after {
+                    position: absolute;
+                    left: 2.5em;
+                    content: ' ';
+                    top: 1em;
+                    height: 3em;
+                    width: 3px;
+                    background-color: rgba(51, 51, 51, 0.3);
+                }
+                .deleteSample::before {
+                    transform: rotate(45deg);
+                }
+                .deleteSample::after {
+                    transform: rotate(-45deg);
+                }
+                /* Petit souci : on peut pas cumuler l'after pour le .dropped ET pour le .deleteSample :| */
+                .dropped::after {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin: -35px 0 0 -35px;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    content: '';
+                    opacity: 0;
+                    pointer-events: none;
+                    box-shadow: 0 0 0 3px rgba(111, 148, 182, 0.05);
+                    -webkit-animation: anim-dropped 0.5s ease-out forwards;
+                    animation: anim-dropped 0.5s ease-out forwards;
+                }
+            }
         }
-        .highlight {
-          border: 4px solid yellow;
-        }
-        .deleteSample::before,
-        .deleteSample::after {
-          position: absolute;
-          left: 2.5em;
-          content: ' ';
-          top: 1em;
-          height: 3em;
-          width: 3px;
-          background-color: rgba(51, 51, 51, 0.3);
-        }
-        .deleteSample::before {
-          transform: rotate(45deg);
-        }
-        .deleteSample::after {
-          transform: rotate(-45deg);
-        }
-        /* Petit souci : on peut pas cumuler l'after pour le .dropped ET pour le .deleteSample :| */
-        .dropped::after {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          margin: -35px 0 0 -35px;
-          width: 70px;
-          height: 70px;
-          border-radius: 50%;
-          content: '';
-          opacity: 0;
-          pointer-events: none;
-          box-shadow: 0 0 0 3px rgba(111, 148, 182, 0.05);
-          -webkit-animation: anim-dropped 0.5s ease-out forwards;
-          animation: anim-dropped 0.5s ease-out forwards;
-        }
-      }
     }
-  }
 }
 
 .scene {
-  display: flex;
-  height: 70%;
-  background: radial-gradient(circle closest-side at 50%, #ffffff -50%, $purple 200%);
-  align-items: center; justify-content: center;
-  .scene--bouncer {
-    background: url('../img/deephouse.png') center/contain no-repeat, $purple;
-    width: 300px; height: 300px;
-    border-radius: 100%;
-    margin: 0 auto;
-  }
+    display: flex;
+    height: 70%;
+    background: radial-gradient(circle closest-side at 50%, #ffffff -50%, $purple 200%);
+    align-items: center;
+    justify-content: center;
+    .scene--bouncer {
+        background: url('../img/deephouse.png') center/contain no-repeat, $purple;
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        margin: 0 auto;
+    }
 }
 
 @keyframes anim-dropped {
-  0% {
-    box-shadow: 0 0 0 3px rgba(111, 148, 182, 0.3);
-    opacity: 1;
-    -webkit-transform: scale3d(0.6, 0.6, 1);
-    transform: scale3d(0.6, 0.6, 1);
-  }
-  100% {
-    box-shadow: 0 0 0 100px rgba(111, 148, 182, 0);
-    opacity: 0;
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
+    0% {
+        box-shadow: 0 0 0 3px rgba(111, 148, 182, 0.3);
+        opacity: 1;
+        -webkit-transform: scale3d(0.6, 0.6, 1);
+        transform: scale3d(0.6, 0.6, 1);
+    }
+    100% {
+        box-shadow: 0 0 0 100px rgba(111, 148, 182, 0);
+        opacity: 0;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
 }
