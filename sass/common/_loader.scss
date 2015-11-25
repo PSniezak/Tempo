@@ -1,11 +1,20 @@
 #loader {
   h2 {
+    background: #F5F5F5;
     font-size: 32px;
     font-weight: 100;
     text-align: center;
     white-space: pre-line;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding-bottom: 5%;
+    padding-top: 20px;
+    margin-bottom: 0;
     span {
       color: #999;
+      font-size: .6em;
+      margin-top: -5px;
+      display: block;
     }
   }
 }
