@@ -1,48 +1,90 @@
-var Home = function(){
+var Home = function () {
 
-	this.id = 'home';
+    this.id = 'home';
 
-	View.apply(this, arguments);
+    View.apply(this, arguments);
 
-	this.images = {
-		'home-background': 'img/home-bg.jpg'
-	};
+    this.images = {
+        'home-background': 'img/home-bg.jpg'
+    };
 
 };
 
 Home.prototype = Object.create(View.prototype);
 
-Home.prototype.animateIn = function() {
-	
-	View.prototype.animateIn.call(this);
+Home.prototype.animateIn = function () {
 
-	var self = this;
+    View.prototype.animateIn.call(this);
 
-	if ( !this.loaded ) return;
+    var self = this;
 
-	this.domElem.fadeIn(500, function(){
-      
-		self.onAnimateIn();
-      
-	});
-   
-   // Animation Home
-   $( "#home img" ).delay(500).animate({ opacity: 1 }, 800, function() {
-      $( ".home__headline").animate({ opacity: 1 }, 500, function(){
-         $('.home__button').animate({ opacity: 1 }), 300});
-   });
+    if (!this.loaded) return;
+
+    this.domElem.fadeIn(500, function () {
+
+        self.onAnimateIn();
+
+    });
+
+    // Animation Home
+    $("#home img").delay(500).animate({
+        opacity: 1
+    }, 800, function () {
+        $(".home__headline").animate({
+            opacity: 1
+        }, 500, function () {
+            $('.home__button').animate({
+                opacity: 1
+            }, 300, function () {
+                $('.home__tuto').animate({
+                    opacity: 1
+                }), 100
+            });
+        });
+    });
+
+    //popup
+
+        
+    $('.home__tuto').click(function () {      
+        if ($('.tutorial-popup').hasClass('visible')) {        
+            $('.tutorial-popup').removeClass('visible');        
+
+        } else {        
+            $('.tutorial-popup').addClass('visible');              
+        }    
+    });
+
+
+    $('.closetag').click(function () {
+        if ($('.tutorial-popup').hasClass('visible')) {          
+            $('.tutorial-popup').removeClass('visible');          
+        }
+    });
+    //    $(window).click(function(e){
+    //      var classObj = $(e.target);
+    //      if(!classObj.hasClass('visible')){
+    //        if($('.tutorial-popup').hasClass('visible')){
+    //          $('.tutorial-popup').removeClass('visible');
+    //          $("#main").removeClass('overlay-popin');
+    //          
+    //        }
+    //      }
+    //    });
+
+
 
 };
 
 
-Home.prototype.animateOut = function() {
-	
-	View.prototype.animateOut.call(this);
+Home.prototype.animateOut = function () {
 
-	var self = this;
+    View.prototype.animateOut.call(this);
 
-	this.domElem.fadeOut(500, function(){
-		self.onAnimateOut();
-	});
+    var self = this;
+
+    this.domElem.fadeOut(500, function () {
+        self.onAnimateOut();
+    });
 
 };

@@ -67,7 +67,6 @@
                 .deleteSample::after {
                     transform: rotate(-45deg);
                 }
-                /* Petit souci : on peut pas cumuler l'after pour le .dropped ET pour le .deleteSample :| */
                 .dropped::after {
                     position: absolute;
                     top: 50%;
