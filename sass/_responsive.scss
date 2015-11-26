@@ -1,0 +1,23 @@
+@media (max-width: 1020px){
+	
+	#home #home__container {
+		img {
+			padding: 0 140px 18px;
+		}
+		
+		.home__headline {
+			font-size: 23px;
+		}
+	}
+	
+	#main #genre {
+		
+		.genre__background__image, canvas {
+			display: none;
+		}
+		
+		.genre__image__name {
+			width: 80%;
+		}	
+	}
+}
