@@ -43,36 +43,6 @@ Home.prototype.animateIn = function () {
         });
     });
 
-    //popup
-
-        
-    $('.home__tuto').click(function () {      
-        if ($('.tutorial-popup').hasClass('visible')) {        
-            $('.tutorial-popup').removeClass('visible');        
-
-        } else {        
-            $('.tutorial-popup').addClass('visible');              
-        }    
-    });
-
-
-    $('.closetag').click(function () {
-        if ($('.tutorial-popup').hasClass('visible')) {          
-            $('.tutorial-popup').removeClass('visible');          
-        }
-    });
-    //    $(window).click(function(e){
-    //      var classObj = $(e.target);
-    //      if(!classObj.hasClass('visible')){
-    //        if($('.tutorial-popup').hasClass('visible')){
-    //          $('.tutorial-popup').removeClass('visible');
-    //          $("#main").removeClass('overlay-popin');
-    //          
-    //        }
-    //      }
-    //    });
-
-
 
 };
 
