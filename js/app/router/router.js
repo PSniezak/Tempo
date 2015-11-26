@@ -74,7 +74,51 @@ Router.prototype.createRoutes = function() {
 		console.log( '## Navigate view experience' );
 
 	});
+	
+	// Drum's and Bass's
+	crossroads.addRoute( '/drumandbass' , function(){
 
+		self._onNavigate.dispatch({
+			view: 'drumandbass'
+		});
+
+		console.log( '## Navigate view drumandbass' );
+
+	});
+	
+	// Dubstep
+	crossroads.addRoute( '/dubstep' , function(){
+
+		self._onNavigate.dispatch({
+			view: 'dubstep'
+		});
+
+		console.log( '## Navigate view dubstep' );
+
+	});
+	
+	// Future
+	crossroads.addRoute( '/future' , function(){
+
+		self._onNavigate.dispatch({
+			view: 'future'
+		});
+
+		console.log( '## Navigate view future' );
+
+	});
+	
+	// Deephouse
+	crossroads.addRoute( '/deephouse' , function(){
+
+		self._onNavigate.dispatch({
+			view: 'deephouse'
+		});
+
+		console.log( '## Navigate view deephouse' );
+
+	});
+	
 };
 
 // Navigate

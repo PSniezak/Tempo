@@ -26,6 +26,10 @@ ViewController.prototype.init = function() {
 		'home': new Home(),
 		'genre': new Genre(),
 		'experience': new Experience(),
+		'drumandbass': new Drumandbass(),
+		'dubstep' : new Dubstep(),
+		'future' : new Future(),
+		'deephouse' : new Deephouse(),
 	};
 
 };
