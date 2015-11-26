@@ -83,12 +83,21 @@
     background: radial-gradient(circle closest-side at 50%, #ffffff -50%, $purple 200%);
     align-items: center;
     justify-content: center;
+    position: relative;
+
+    #canvas-spectrum {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 40;
+        }
     .scene--bouncer {
         background: url('../img/deephouse.png') center/contain no-repeat, $purple;
         width: 300px;
         height: 300px;
         border-radius: 100%;
         margin: 0 auto;
+        z-index: 60;
     }
 }
 
