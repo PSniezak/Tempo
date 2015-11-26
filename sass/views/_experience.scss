@@ -90,15 +90,99 @@
             height: 100%;
             position: absolute;
             z-index: 40;
-        }
+    }
+    #canvas-particles {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 40;
+    }
     .scene--bouncer {
-        background: url('../img/deephouse.png') center/contain no-repeat, $purple;
         width: 300px;
         height: 300px;
+        margin: 0 auto;
+        z-index: 60;
+        position: relative;
+    }
+    .scene--bouncer-image {
+        background: url('../img/deephouse.png') center/contain no-repeat;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        border-radius: 100%;
+        margin: 0 auto;
+        z-index: 61;
+    }
+    .scene--bouncer-circle {
+        background-color: $purple;
+        width: 300px;
+        height: 300px;
+        position: absolute;
         border-radius: 100%;
         margin: 0 auto;
         z-index: 60;
     }
+    .scene--bouncer-outline {
+        right: -20px;
+        top: -20px;
+        width: 304px;
+        height: 305px;
+        position: absolute;
+        border: 18px solid #cfd3fc;
+        border-radius: 50%;
+        margin: 0 auto;
+        z-index: 60;
+    }
+    .scene--bouncer-outline-2 {
+        right: -32px;
+        top: -32px;
+        width: 358px;
+        height: 358px;
+        position: absolute;
+        border: 3px solid #cfd3fc;
+        border-radius: 50%;
+        margin: 0 auto;
+        z-index: 60;
+    }
+    .scene--bouncer-outline-3 {
+        right: -39px;
+        top: -39px;
+        width: 372px;
+        height: 372px;
+        position: absolute;
+        border: 3px solid #cfd3fc;
+        border-radius: 50%;
+        margin: 0 auto;
+        z-index: 60;
+    }
+    .scene--bouncer-outline-animated {
+        animation: sceneBouncerBoom 0.698s infinite ease-out;
+    }
+}
+
+@keyframes sceneBouncerBoom {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes waveIsPulsing {
+  0% {
+    opacity: 1;
+    transform: scale(.7);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4); }
 }
 
 @keyframes anim-dropped {
