@@ -1,6 +1,5 @@
 
 #TEMPO
-***
 
 **Nom du projet** : TEMPO
 
