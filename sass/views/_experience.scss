@@ -11,12 +11,13 @@
         height: 29%;
         display: flex;
         justify-content: space-between;
+        width: 100%;
+        position: relative;
         .scene-tuto {
-            height: 29%;
-            width: auto;
-            p{
-                
-            padding: 0 30px;
+            height: auto;
+            p {
+                font-size: 16px;
+                top: 0;
             }
         }
         .sample {
@@ -99,9 +100,11 @@
     z-index: 61;
     p {
         top: 15%;
-        padding: 10px;
+        width: 300px;
+        margin: 0 auto;
         position: relative;
         line-height: 25px;
+        font-size: 18px;
         b {
             margin: 10px 0;
             display: block;
@@ -165,5 +168,13 @@
         opacity: 0;
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
+    }
+}
+
+.scene-tuto {
+    border: 2px solid red;
+    p {
+        font-size: 16px;
+        top: 0;
     }
 }
