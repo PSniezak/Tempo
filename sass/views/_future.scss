@@ -11,7 +11,6 @@
     }
     .sample-content {
         margin-top: 0.5%;
-        height: 25%;
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -121,7 +120,7 @@
     }
     .scene {
     display: flex;
-    height: 70%;
+    height: 62%;
     background: radial-gradient(circle closest-side at 50%, #ffffff -50%, $futureBlue 200%);
     align-items: center;
     justify-content: center;

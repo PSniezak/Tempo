@@ -11,7 +11,6 @@
     }
     .sample-content {
         margin-top: 0.5%;
-        height: 25%;
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -100,7 +99,7 @@
         position: absolute;
         //Greensock met de manière automatique un z-index à 1001 quand un élément commence à être drag
         z-index: 1600;
-        border: 2px solid $futureBlue;
+        border: 2px solid $deepHousePurple;
         p {
             top: 15%;
             padding: 10px;
@@ -120,7 +119,7 @@
     }
     .scene {
     display: flex;
-    height: 70%;
+    height: 62%;
     background: radial-gradient(circle closest-side at 50%, #ffffff -50%, #615574 200%);
     align-items: center;
     justify-content: center;
