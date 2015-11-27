@@ -1,28 +1,32 @@
 #main #drumandbass {
-    top: 15px;
+    top: 0px;
     overflow: inherit;
     background-color: #fff;
     text-align: center;
+    .logo-head {
+        z-index: 90;
+    }
     .logo-home {
         margin-bottom: 10px;
     }
     .sample-content {
         margin-top: 0.5%;
+        height: 25%;
         position: relative;
         display: flex;
         justify-content: space-between;
         .scene-tuto {
-            width: auto;
+            width: 100%;
             p {
                 padding: 0 30px;
             }
         }
         .sample {
             width: 33%;
-            background-color: #e6e1ef;
+            background-color: #615574;
             h5 {
                 text-align: center;
-                color: $drumBassPurple;
+                color: white;
                 font-size: 1.8em;
                 text-transform: uppercase;
                 margin: 13px 0;
@@ -33,16 +37,18 @@
                 margin-bottom: 5%;
                 .element {
                     display: flex;
+                    color: #615574;
                     border-radius: 50%;
                     background-color: #FFF;
-                    height: 5em;
-                    width: 5em;
+                    height: 6em;
+                    width: 6em;
                     justify-content: center;
                     align-items: center;
                     transition: background-color 0.5s, color 0.5s;
                     span {
-                        font-size: 80%;
+                        font-size: 100%;
                         text-align: center;
+                        font-weight: bold;
                         text-transform: uppercase;
                         padding: 0 10px;
                     }
@@ -94,7 +100,7 @@
         position: absolute;
         //Greensock met de manière automatique un z-index à 1001 quand un élément commence à être drag
         z-index: 1600;
-        border: 2px solid $drumBassPurple;
+        border: 2px solid $futureBlue;
         p {
             top: 15%;
             padding: 10px;
@@ -113,40 +119,134 @@
         }
     }
     .scene {
-        display: flex;
-        height: 70%;
-        background: radial-gradient(circle closest-side at 50%, #ffffff -50%, $drumBassPurple 200%);
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        #canvas-spectrum {
+    display: flex;
+    height: 70%;
+    background: radial-gradient(circle closest-side at 50%, #ffffff -50%, #615574 200%);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+        .tuto {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 25px;
+        height: 25px;
+        z-index: 2000;
+        cursor: pointer;
+        background-image: url(/img/icon-help.svg);
+        background-repeat: no-repeat;
+    }
+    #canvas-spectrum {
             width: 100%;
             height: 100%;
             position: absolute;
             z-index: 40;
-        }
-        .tuto {
+    }
+    #canvas-particles {
+            width: 100%;
+            height: 100%;
             position: absolute;
-            right: 10px;
-            top: 10px;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
-            z-index: 2000;
-            background-image: url(/img/icon-help.svg);
-            background-repeat: no-repeat;
-        }
-        .scene--bouncer {
-            background: url('../img/drumandbass.png') center/contain no-repeat, $drumBassPurple;
-            width: 300px;
-            height: 300px;
-            border-radius: 100%;
-            margin: 0 auto;
-            z-index: 60;
-        }
+            z-index: 40;
+    }
+    .scene--bouncer {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        z-index: 60;
+        position: relative;
+    }
+    .scene--bouncer-image {
+        background: url('../img/DrumandbassPlay.png') center/contain no-repeat;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        border-radius: 100%;
+        margin: 0 auto;
+        z-index: 61;
+    }
+    .scene--bouncer-circle {
+        background-color: #615574;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        border-radius: 100%;
+        margin: 0 auto;
+        z-index: 60;
+    }
+    .scene--bouncer-outline {
+        right: -20px;
+        top: -20px;
+        width: 340px;
+        height: 340px;
+        position: absolute;
+        border: 18px solid #615574;
+        border-radius: 50%;
+        margin: 0 auto;
+        z-index: 60;
+    }
+    .scene--bouncer-outline-2 {
+        right: -29px;
+        top: -29px;
+        width: 358px;
+        height: 358px;
+        position: absolute;
+        border: 3px solid #615574;
+        border-radius: 50%;
+        margin: 0 auto;
+        z-index: 60;
+    }
+    .scene--bouncer-outline-3 {
+        right: -36px;
+        top: -36px;
+        width: 372px;
+        height: 372px;
+        position: absolute;
+        border: 3px solid #615574;
+        border-radius: 50%;
+        margin: 0 auto;
+        z-index: 60;
+    }
+    .drumandbass-forme {
+        right: -90px;
+        top: -90px;
+        background: url('../img/DrumandbassForm.png') center/contain no-repeat;
+        width: 480px;
+        height: 480px;
+        position: absolute;
+        border-radius: 100%;
+        margin: 0 auto;
+        z-index: 49;
+    }
+    .scene--bouncer-outline-animated {
+        animation: sceneBouncerBoom 0.428s infinite ease-out;
     }
 }
+}
 
+@keyframes sceneBouncerBoom {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes waveIsPulsing {
+  0% {
+    opacity: 1;
+    transform: scale(.7);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4); }
+}
 @keyframes anim-dropped {
     0% {
         box-shadow: 0 0 0 3px rgba(111, 148, 182, 0.3);

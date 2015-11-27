@@ -50,18 +50,18 @@ Genre.prototype.animateIn = function() {
 	var intervDraw;
 	
 	//Animation qui se lance quand on hover
-	$('.categories').mouseenter(function() {
-		var categoryChild = $(this).children("canvas");
-		if (categoryChild.attr('id') == "genre__canvas1")
-			intervDraw = setInterval(ctx1, 100);
-		else if (categoryChild.attr('id') == "genre__canvas2")
-			intervDraw = setInterval(ctx2, 100);
-		else if (categoryChild.attr('id') == "genre__canvas3")
-			intervDraw = setInterval(ctx3, 100);
-		else if (categoryChild.attr('id') == "genre__canvas4")
-			intervDraw = setInterval(ctx4, 100);
+	// $('.categories').mouseenter(function() {
+	// 	var categoryChild = $(this).children("canvas");
+	// 	if (categoryChild.attr('id') == "genre__canvas1")
+	// 		intervDraw = setInterval(ctx1, 100);
+	// 	else if (categoryChild.attr('id') == "genre__canvas2")
+	// 		intervDraw = setInterval(ctx2, 100);
+	// 	else if (categoryChild.attr('id') == "genre__canvas3")
+	// 		intervDraw = setInterval(ctx3, 100);
+	// 	else if (categoryChild.attr('id') == "genre__canvas4")
+	// 		intervDraw = setInterval(ctx4, 100);
 		
-	});
+	// });
 	
 	//On stop l'animation quand on quitte le div
 	$('.categories').mouseleave(function() {

@@ -1,8 +1,10 @@
-// Volume
-// Clear canvas ?
-// stress effect
-// Pulse
-// Gérer quand tu le redéposes direct
+// - Stress Effect
+// - Volume
+// - Clear canvas
+// - Quand on change de page, ça vire le son et absolument tout en fait
+// - Animation en hover sur les pastilles et éventuellement au temps (cf remplissage)
+// - Lowpass en changeant de tab
+// - design global
 
 var Experience = function () {
 
